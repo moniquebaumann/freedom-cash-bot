@@ -1,5 +1,11 @@
 # Friends Of Satoshi 
-This allows you to get in touch with friends of Satoshi.
+This allows you to get in touch with [Friends of Satoshi](https://t.me/FriendsOfSatoshi_bot).    
+
+Corrupt politicians and other non player charakters have hijacked Bitcoin by laundering their corrupt FIAT money into Bitcoin. 
+The majority of Bitcoin is atm of writing this not owned by Freedom-, Peace- and Truth Lovers. This is why we reshuffle the cards :) leveraging the latest Blockchain  Technology Improvements like Proof of Stake & sophisticated L2 Scaling.
+
+We collect reward requests via [Friends of Satoshi](https://t.me/FriendsOfSatoshi_bot). If you are lucky, motivated and quick, you might receive some Freedom Cash during the decentralizing initial distribution process via self hosted [Geo Caching Paper Wallets](https://Geo-Caching.org).  
+
 
 ## Usage Example
 ```sh
