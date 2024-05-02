@@ -11,7 +11,7 @@ bot.on(UpdateType.Message, async (message: any) => {
     console.log(message)
     const text = message.message.text || "I can't hear you";
 
-    await bot.sendMessage({ chat_id: message.message.chat.id, text: `Thank You. Satoshi's friends might consider funding your freedom. You sent: ${text}` })
+    await bot.sendMessage({ chat_id: message.message.chat.id, text: `Thank You. Satoshi's friends might consider co-funding your freedom. You sent: ${text}. Due to a surprisingly high number of messages (often more than 100 per hour), we do no longer read every message. We wish you freedom.` })
     await bot.sendMessage({ chat_id: chatIDSatoshisFriends, text: `someone found a Freedom Cash wallet and wrote: ${text}` })
 });
 
