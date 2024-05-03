@@ -37,7 +37,7 @@ export class Distributor {
         const wallet = new ethers.Wallet(pkTestWallet, this.provider)
         const signer = await wallet.connect(this.provider)
         let start = 0
-        let minDelta = 36
+        let minDelta = 360
 
         const sender = await signer.getAddress()
         console.log(sender)
@@ -59,9 +59,9 @@ export class Distributor {
                     const currentGasPrice = (await this.provider.getFeeData()).gasPrice
                     this.logger.info(`currentGasPrice: ${currentGasPrice}`)
                     if (currentGasPrice < 45000000000) {
-                        
+
                         this.logger.warning(`amount of receivers: ${receivers.length}`)
-                        
+
                         const amountPerReceiver = BigInt(360 * 10 ** 18)
                         const total = amountPerReceiver * BigInt(receivers.length)
                         const balance = await this.contract.balanceOf(sender)
@@ -77,8 +77,10 @@ export class Distributor {
                         tx = await this.contract.distributeGeoCash(amountPerReceiver, receivers)
                         this.logger.info(`https://polygonscan.com/tx/${tx.hash}`)
                         receivers = []
+                    } else {
+                        this.logger.info(`gas price is ${currentGasPrice} so I rather sleep some time`)
+                        await sleep(360)
                     }
-
                 }
             } catch (error) {
                 this.logger.error(error.message)
@@ -109,7 +111,7 @@ export class Distributor {
             currentIndex--;
             [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
         }
-    
+
         return array;
-    }    
+    }
 }
